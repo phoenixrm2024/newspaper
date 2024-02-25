@@ -1,0 +1,10 @@
+<!--template/article_delete.html-->
+{% extends "base.html" %}
+{% block content %}
+<h4><a href="{% url 'article_detail' article.pk %}">Delete Article</a></h4>
+<form action='' method='POST'>
+  {% csrf_token %}
+  <p>Are you sure you want to delete "{{ article.title }}"?</p>
+  <input class="btn btn-danger ml-2" type='submit' value='Confirm'>
+</form>
+{% endblock content %}
